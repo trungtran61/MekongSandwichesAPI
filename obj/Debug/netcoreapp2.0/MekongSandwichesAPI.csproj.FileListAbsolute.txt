@@ -1,0 +1,11 @@
+E:\Projects\MekongSandwichesAPI\bin\Debug\netcoreapp2.0\MekongSandwichesAPI.deps.json
+E:\Projects\MekongSandwichesAPI\bin\Debug\netcoreapp2.0\MekongSandwichesAPI.runtimeconfig.json
+E:\Projects\MekongSandwichesAPI\bin\Debug\netcoreapp2.0\MekongSandwichesAPI.runtimeconfig.dev.json
+E:\Projects\MekongSandwichesAPI\bin\Debug\netcoreapp2.0\MekongSandwichesAPI.dll
+E:\Projects\MekongSandwichesAPI\bin\Debug\netcoreapp2.0\MekongSandwichesAPI.pdb
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.csprojAssemblyReference.cache
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.csproj.CoreCompileInputs.cache
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.AssemblyInfoInputs.cache
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.AssemblyInfo.cs
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.dll
+E:\Projects\MekongSandwichesAPI\obj\Debug\netcoreapp2.0\MekongSandwichesAPI.pdb
