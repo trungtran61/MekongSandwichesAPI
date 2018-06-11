@@ -67,6 +67,8 @@ namespace MekongSandwichesAPI.Repository
                     {
                         while (reader.Read())
                         {
+                            List<OrderItem> items = JsonConvert.DeserializeObject<List<OrderItem>>(reader["OrderItems"].ToString());
+                            
                             Orders.Add(new Order
                             {
                                 id = Convert.ToInt32(reader["ID"].ToString()),
@@ -74,7 +76,7 @@ namespace MekongSandwichesAPI.Repository
                                 phone = reader["Phone"].ToString(),
                                 pickUpDate = Convert.ToDateTime(reader["PickupDate"].ToString()),
                                 pickUpTime = Convert.ToDateTime(reader["PickupTime"].ToString()),
-                                orderItems = (OrderItem[])reader["OrderItems"]
+                                orderItems = items.ToArray()
                             });
                         }
                     }
