@@ -9,7 +9,7 @@ namespace MekongSandwichesAPI.Models
         public int id { get; set; }
         public string name { get; set; }
         public string phone { get; set; }
-        public DateTime pickUpTime { get; set; }
+        public string pickUpTime { get; set; }
         public DateTime pickUpDate { get; set; }
         public OrderItem[] orderItems { get; set; }
     }
@@ -20,9 +20,14 @@ namespace MekongSandwichesAPI.Models
         public string name { get; set; }
         public int qty { get; set; }
         public decimal price { get; set; }
-        public string instructions { get; set; }
+        public ItemOption[] instructions { get; set; }
     }
 
+public class ItemOption {
+    public string option { get; set; }
+    public string item { get; set; }
+    public decimal price { get; set; }    
+}
      public class DBResponse
     {
         public int ReturnCode { get; set; }

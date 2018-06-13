@@ -35,7 +35,7 @@ namespace MekongSandwichesAPI.Repository
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@CustomerName", SqlDbType.VarChar, 50).Value = order.name;
                         cmd.Parameters.Add("@Phone", SqlDbType.VarChar, 20).Value = order.phone;
-                        cmd.Parameters.Add("@PickupTime", SqlDbType.VarChar).Value = order.pickUpTime.ToShortTimeString();
+                        cmd.Parameters.Add("@PickupTime", SqlDbType.VarChar, 8).Value = order.pickUpTime.Substring(0,8);
                         cmd.Parameters.Add("@PickupDate", SqlDbType.Date).Value = order.pickUpDate;
                         cmd.Parameters.Add("@OrderItems", SqlDbType.VarChar, 0).Value = JsonConvert.SerializeObject(order.orderItems);
                         con.Open();
@@ -75,7 +75,7 @@ namespace MekongSandwichesAPI.Repository
                                 name = reader["CustomerName"].ToString(),
                                 phone = reader["Phone"].ToString(),
                                 pickUpDate = Convert.ToDateTime(reader["PickupDate"].ToString()),
-                                pickUpTime = Convert.ToDateTime(reader["PickupTime"].ToString()),
+                                pickUpTime = reader["PickupTime"].ToString(),
                                 orderItems = items.ToArray()
                             });
                         }
@@ -83,6 +83,28 @@ namespace MekongSandwichesAPI.Repository
                 }
             }
             return Orders;
+        }
+
+         public void UpdateOrderStatus(int orderId)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(appSettings.MSConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UpdateOrderStatus", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@OrderId", SqlDbType.Int).Value = orderId;                       
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
+            }
+            catch
+            {
+                throw;
+            }            
         }
         public void Dispose()
         {
